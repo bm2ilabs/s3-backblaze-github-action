@@ -1,6 +1,6 @@
-name: "S3 File Upload"
-description: "Upload an object to an S3 bucket."
-author: "zdurham"
+name: "S3 File Upload (BackBlaze)"
+description: "Upload an object to an S3 bucket like backblaze."
+author: "bm2ilabs"
 runs:
   using: docker
   image: Dockerfile

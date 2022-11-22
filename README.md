@@ -1,5 +1,5 @@
 # s3-upload-github-action
-Upload github action for sending files to s3
+Upload github action for sending files to s3 like Backblaze
 
 
 ## Usage
@@ -21,14 +21,14 @@ jobs:
    - uses: actions/checkout@master
    
    - name: Upload file to bucket
-   uses: zdurham/s3-upload-github-action@master
+   uses: bm2ilabs/s3-upload-github-action@master
    with:
      args: --acl public-read
    env:
     FILE: ./lambda.zip
-    AWS_REGION: 'us-east-1'
-    S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-    S3_KEY: ${{ secrets.S3_KEY }}
-    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    S3_REGION: 'us-east-1'
+    S3_BUCKET: ${{ secrets.S3_BUCKET }}
+    S3_ENDPOING_URL: 'https://s3.us-west-002.backblazeb2.com'
+    S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+    S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
 ```
