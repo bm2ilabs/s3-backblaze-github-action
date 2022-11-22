@@ -20,15 +20,15 @@ jobs:
     steps:
    - uses: actions/checkout@master
    
-   - name: Upload file to bucket
-   uses: bm2ilabs/s3-upload-github-action@master
-   with:
-     args: --acl public-read
-   env:
-    FILE: ./lambda.zip
-    S3_REGION: 'us-east-1'
-    S3_BUCKET: ${{ secrets.S3_BUCKET }}
-    S3_ENDPOING_URL: 'https://s3.us-west-002.backblazeb2.com'
-    S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
-    S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+   - name: S3 File Upload (BackBlaze)
+     uses: bm2ilabs/s3-backblaze-github-action@v1
+     with:
+       args: --acl public-read
+     env:
+      FILE: lambda.zip
+      S3_REGION: 'us-east-1'
+      S3_BUCKET: ${{ secrets.S3_BUCKET }}
+      S3_ENDPOING_URL: 'https://s3.us-west-002.backblazeb2.com'
+      S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+      S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
 ```
