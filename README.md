@@ -28,7 +28,7 @@ jobs:
       FILE: lambda.zip
       S3_REGION: 'us-east-1'
       S3_BUCKET: ${{ secrets.S3_BUCKET }}
-      S3_ENDPOING_URL: 'https://s3.us-west-002.backblazeb2.com'
+      S3_ENDPOINT_URL: 'https://s3.us-west-002.backblazeb2.com'
       S3_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
       S3_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
 ```
